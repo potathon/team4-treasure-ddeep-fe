@@ -9,7 +9,7 @@
 
 .albumItem {
     width: 50%;
-    height: 90%;
+    height: 98%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -55,7 +55,7 @@
 /*}*/
 
 .image {
-    height: 90px;
+    height: 95px;
     width: auto;
     display: block;
     /*margin: 0 auto;*/
@@ -63,8 +63,8 @@
 }
 
 .title {
-    font-size: 20px;
-    margin-top: 2px;
+    font-size: 18px;
+    margin-top: 4px;
 }
 
 .infoContainer {
@@ -72,13 +72,17 @@
     width: 70%;
     color: black;
     margin-top: 10px;
+    font-size: 14px;
+
 }
 
 .infoItem {
     margin-bottom: 5px;
+
 }
 
 .content {
     /*margin-top: 10px;*/
     margin-bottom: 70px;
+
 }

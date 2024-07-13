@@ -52,7 +52,6 @@ const CreateAlbumPC: React.FC = () => {
     if (
       image === null ||
       nickname === '' ||
-      password === '' ||
       title === '' ||
       content === '' ||
       location === ''
@@ -118,13 +117,13 @@ const CreateAlbumPC: React.FC = () => {
                 className={styles.input}
                 onChange={handleNickname}
               />
-              <input
-                type="password"
-                value={password}
-                placeholder="비밀번호"
-                className={styles.input}
-                onChange={handlePassword}
-              />
+              {/*<input*/}
+              {/*  type="password"*/}
+              {/*  value={password}*/}
+              {/*  placeholder="비밀번호"*/}
+              {/*  className={styles.input}*/}
+              {/*  onChange={handlePassword}*/}
+              {/*/>*/}
             </div>
             <input
               type="text"
@@ -142,6 +141,7 @@ const CreateAlbumPC: React.FC = () => {
               <option value="제주북서쪽">제주 북서쪽</option>
               <option value="서귀포남동쪽">서귀포 남동쪽</option>
               <option value="서귀포남서쪽">서귀포 남서쪽</option>
+              <option value="구름스퀘어">구름스퀘어</option>
             </select>
             <textarea
               value={content}
