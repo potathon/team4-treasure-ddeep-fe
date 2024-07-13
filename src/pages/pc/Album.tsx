@@ -5,7 +5,9 @@ import Layout from '../../components/layout/Layout';
 const AlbumPC: React.FC = () => {
   return (
     <Layout>
-      <div className={styles.container}></div>
+      <div className={styles.container}>
+        <div className={styles.album}></div>
+      </div>
     </Layout>
   );
 };
