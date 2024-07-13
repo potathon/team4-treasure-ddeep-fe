@@ -12,10 +12,26 @@
 }
 
 .album {
-    width: 100%; /* Adjust as needed */
-    height: 100%; /* Adjust as needed */
+    width: 100%; /* Set width to 100% */
+    height: 100%; /* Set height to 100% */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url('../../assets/images/album.png');
+    transform: scale(1.05);
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.contentContainer {
+    /*background-color: black;*/
+    width: 80%;
+    height: 50%;
+    padding: 15px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+

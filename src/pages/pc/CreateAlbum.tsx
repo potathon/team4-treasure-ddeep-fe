@@ -20,7 +20,7 @@ const CreateAlbumPC: React.FC = () => {
     setContent(e.target.value);
   };
   const submit_post = () => {
-    if (nickname == '' || password == '' || title == '' || content == '') {
+    if (nickname === '' || password === '' || title === '' || content === '') {
       alert('모든 내용을 입력해주세요');
       return;
     } else {

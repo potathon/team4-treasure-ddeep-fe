@@ -7,7 +7,8 @@
         "title" : "제주에서 찍은 사진",
         "content" : "1팀이랑 스터디했습니당",
         "password" : "1234",
-        "post_image_path" : "https://i.pravatar.cc/300"
+        "post_image_path" : "https://i.pravatar.cc/300",
+        "update_at": "2024-07-11 01:22:22"
       },
       {
         "nickname": "steven",
@@ -15,7 +16,8 @@
         "title": "바다에서",
         "content": "물놀이 즐거웠어요!",
         "password": "9876",
-        "post_image_path": "https://i.pravatar.cc/202"
+        "post_image_path": "https://i.pravatar.cc/202",
+        "update_at": "2024-07-11 01:22:22"
       },
       {
         "nickname" : "wendy",
@@ -23,7 +25,8 @@
         "title" : "새로운 곳",
         "content" : "재밌당~~",
         "password" : "0000",
-        "post_image_path" : "https://i.pravatar.cc/400"
+        "post_image_path" : "https://i.pravatar.cc/400",
+        "update_at": "2024-07-11 01:22:22"
       },
       {
         "nickname": "paz",
@@ -31,7 +34,8 @@
         "title": "해변의 일몰",
         "content": "멋진 일몰을 보았어요!",
         "password": "5678",
-        "post_image_path": "https://i.pravatar.cc/201"
+        "post_image_path": "https://i.pravatar.cc/201",
+        "update_at": "2024-07-11 01:22:22"
       },
 
       {
@@ -40,7 +44,8 @@
         "title": "산책 중 발견",
         "content": "예쁜 꽃을 봤어요.",
         "password": "4321",
-        "post_image_path": "https://i.pravatar.cc/203"
+        "post_image_path": "https://i.pravatar.cc/203",
+        "update_at": "2024-07-11 01:22:22"
       },
       {
         "nickname": "lucas",
@@ -48,7 +53,8 @@
         "title": "도심의 하루",
         "content": "카페에서 커피 한잔!",
         "password": "1357",
-        "post_image_path": "https://i.pravatar.cc/204"
+        "post_image_path": "https://i.pravatar.cc/204",
+        "update_at": "2024-07-11 01:22:22"
       },
       {
         "nickname": "olivia",
@@ -56,7 +62,8 @@
         "title": "트레킹",
         "content": "산책로를 걸었어요.",
         "password": "2468",
-        "post_image_path": "https://i.pravatar.cc/205"
+        "post_image_path": "https://i.pravatar.cc/205",
+        "update_at": "2024-07-11 01:22:22"
       }
     ]}
 }
