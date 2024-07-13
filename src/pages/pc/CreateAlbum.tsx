@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './CreateAlbum.module.css';
 import Layout from '../../components/layout/Layout';
+import CloseBtn from '../../assets/images/button.png';
 
 const CreateAlbumPC: React.FC = () => {
   const [nickname, setNickname] = useState('');
   const [password, setPassword] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const navigate = useNavigate();
+
   const handleNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(e.target.value);
   };
@@ -19,6 +23,11 @@ const CreateAlbumPC: React.FC = () => {
   const handleContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
   };
+
+  const handleButtonClick = () => {
+    navigate('/');
+  };
+
   const submit_post = () => {
     if (nickname === '' || password === '' || title === '' || content === '') {
       alert('모든 내용을 입력해주세요');
@@ -47,7 +56,11 @@ const CreateAlbumPC: React.FC = () => {
     <Layout>
       <div className={styles.container}>
         <div className={styles.windowContainer}>
-          <div className={styles.topBar}></div>
+          <div className={styles.topBar}>
+            <button className={styles.closeBtn} onClick={handleButtonClick}>
+              <img src={CloseBtn} alt="Close Btn" />
+            </button>
+          </div>
           <div className={styles.innerContainer}>
             <div className={styles.imageContainer}></div>
             <div className={styles.inputRow}>
