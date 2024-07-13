@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css';
 import Layout from '../../components/layout/Layout';
@@ -7,17 +7,41 @@ import Pointer1 from '../../assets/images/pointer_1.png';
 import Pointer2 from '../../assets/images/pointer_2.png';
 import Pointer3 from '../../assets/images/pointer_3.png';
 import Pointer4 from '../../assets/images/pointer_4.png';
+import shipVideo from '../../assets/videos/ship_video.mp4';
 
 const HomePC: React.FC = () => {
   const navigate = useNavigate();
+  const [isVideoVisible, setVideoVisible] = useState(false);
+  const [location, setLocation] = useState('');
 
   const handleButtonClick = (location: string) => {
-    // navigate(`/album?location=${location}`);
+    setLocation(location);
+    setVideoVisible(true);
+  };
+
+  const handleVideoPlay = () => {
+    setTimeout(() => {
+      navigate(`/album?location=${location}`);
+    }, 2500); // 4 seconds
+
     navigate(`/album?location=${encodeURIComponent(location)}`);
   };
 
   return (
     <Layout>
+      {isVideoVisible && (
+        <div className={styles.videoContainer}>
+          <video
+            muted
+            autoPlay
+            loop
+            className={styles.video}
+            onPlay={handleVideoPlay}
+          >
+            <source src={shipVideo} type="video/mp4" />
+          </video>
+        </div>
+      )}
       <div className={styles.container}>
         <img src={Logo} alt="Logo" className={styles.logo} />
         <div className={styles.pointerContainer}>

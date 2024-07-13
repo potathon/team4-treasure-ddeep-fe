@@ -44,7 +44,7 @@ const CreateAlbumPC: React.FC = () => {
   };
 
   const handleButtonClick = () => {
-    navigate('/');
+    navigate('/home');
   };
 
   const submit_post = () => {

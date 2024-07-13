@@ -43,12 +43,27 @@
     margin-top: 20px;
     background-color: #FEC247;
     border-radius: 55px 55px 0 0;
+    box-shadow: 2px 0px 0px #E3A017, 3px 0px 0px #E3A017,
+    4px 0px 0px #E3A017, 5px 0px 0px #E3A017,
+    6px 0px 0px #E3A017, 7px 0px 0px #E3A017,
+    8px 0px 0px #E3A017, 9px 0px 0px #E3A017,
+    10px 0px 0px #E3A017, 11px 0px 0px #E3A017,
+    12px 0px 0px #E3A017, 13px 0px 0px #E3A017,
+    14px 0px 0px #E3A017, 15px 0px 0px #E3A017,
+    16px 0px 0px #E3A017, 17px 0px 0px #E3A017,
+    18px 0px 0px #E3A017, 19px 0px 0px #E3A017;
+
+
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    border: 4px solid rgba(255, 255, 255, 0.42);
+
     /*overflow: hidden;*/
 }
 
 .outerContainer {
     width: 85%; /* Relative size to the container */
-    height: 85%; /* Relative size to the container */
+    height: 83%; /* Relative size to the container */
     /*background-color: #777777; */
     background-color: #777777;
     display: flex;
@@ -73,6 +88,9 @@
     top:4%; /* Positioning the screen */
     border-radius: 3px;
     border: 5px solid #333333;
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+
 }
 
 .consoleName {
@@ -83,18 +101,6 @@
     font-style: normal;
     color: white;
     font-size: 18px;
-}
-
-.buttonContainer {
-    position: absolute;
-    bottom: 1.5%;
-    justify-content: space-between;
-    /*밑에 width로 버튼 위치 조정 */
-    /*width: 100%;*/
-    padding: 10px;
-    /*height: 30px;*/
-    /*background-color: red;*/
-    /*background-color: black;*/
 }
 
 .arrowBtnGroup {
@@ -181,6 +187,51 @@ button.depth:active {
 }
 
 
+
+/*전원버튼 ======>*/
+
+.buttonContainer {
+    position: absolute;
+    bottom: 1.5%;
+    justify-content: space-between;
+    /*밑에 width로 버튼 위치 조정 */
+    /*width: 100%;*/
+    padding: 10px;
+    /*height: 30px;*/
+    /*background-color: black;*/
+    /*background-color: black;*/
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    align-items: center;
+}
+
+
+.emptyBox {
+    width: 100px;
+    /*background-color: red;*/
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.powerBtnGroup {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.powerBtnGroup span {
+    margin: 2.5px 0 0 4px ;
+}
+
+.powerBtn {
+    width: 25px;
+    height: 25px;
+}
+
+
 /*.leftBtn {*/
 /*    background: hsl(340deg 100% 32%);*/
 /*    border: none;*/
@@ -257,5 +308,4 @@ button.depth:active {
 /*.startBtn:active .startFront {*/
 /*    transform: translateY(-2px);*/
 /*}*/
-
 

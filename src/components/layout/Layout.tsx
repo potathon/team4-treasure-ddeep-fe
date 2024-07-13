@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Layout.module.css';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { AiFillHome } from 'react-icons/ai';
+import { FaArrowLeft, FaArrowRight, FaPowerOff } from 'react-icons/fa';
 import { useNavigate, useLocation } from 'react-router-dom';
+import On from '../../assets/images/on_btn.png';
+import Off from '../../assets/images/off_btn.png';
 
 const Layout = (props: { children: React.ReactNode }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [powerOn, setPowerOn] = useState(false);
+  const [BtnOn, setBtnOn] = useState(false);
 
-  const handleHomeClick = () => {
-    navigate('/');
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setBtnOn(false);
+    } else {
+      setBtnOn(true);
+    }
+  }, [location.pathname]);
+
+  const handlePowerClick = () => {
+    setBtnOn(!BtnOn);
+    console.log(BtnOn);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setPowerOn(false);
+    } else {
+      if (powerOn) {
+        setPowerOn(false);
+      } else {
+        navigate('/loading');
+        setPowerOn(true);
+      }
+    }
   };
 
   const handleArrowClick = (direction: 'left' | 'right') => {
@@ -37,6 +60,7 @@ const Layout = (props: { children: React.ReactNode }) => {
         <div className={styles.consoleName}>KtbsStation 5</div>
       </div>
       <div className={styles.buttonContainer}>
+        <div className={styles.emptyBox}></div>
         <div className={styles.arrowBtnGroup}>
           <button
             className={styles.depth}
@@ -48,9 +72,9 @@ const Layout = (props: { children: React.ReactNode }) => {
           <button
             className={styles.depth}
             type="button"
-            onClick={handleHomeClick}
+            onClick={handlePowerClick}
           >
-            <AiFillHome />
+            <FaPowerOff />
           </button>
           <button
             className={styles.depth}
@@ -59,6 +83,16 @@ const Layout = (props: { children: React.ReactNode }) => {
           >
             <FaArrowRight />
           </button>
+        </div>
+        <div className={styles.emptyBox}>
+          <div className={styles.powerBtnGroup}>
+            <img
+              src={BtnOn ? On : Off}
+              alt={BtnOn ? 'On_Btn' : 'Off_Btn'}
+              className={styles.powerBtn}
+            />
+            <span>{BtnOn ? 'Onㅤ' : 'Off'}</span>
+          </div>
         </div>
       </div>
     </div>
