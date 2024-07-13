@@ -12,7 +12,8 @@ const HomePC: React.FC = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = (location: string) => {
-    navigate(`/album?location=${location}`);
+    // navigate(`/album?location=${location}`);
+    navigate(`/album?location=${encodeURIComponent(location)}`);
   };
 
   return (
