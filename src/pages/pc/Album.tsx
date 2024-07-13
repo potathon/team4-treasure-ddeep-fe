@@ -56,7 +56,7 @@ const AlbumPC: React.FC = () => {
               alt="title"
               className={styles.albumTitleImg}
             />
-            <div className={styles.albumTitleText}>제주도 북서쪽</div>
+            <div className={styles.albumTitleText}>{albumLocation}</div>
           </div>
         </div>
 
