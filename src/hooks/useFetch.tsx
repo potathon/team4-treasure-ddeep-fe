@@ -12,9 +12,9 @@ function useFetch<T = any>(url: string, options?: RequestInit): FetchResult<T> {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const send = async () => {
+    const fetchData = async () => {
       setLoading(true);
-      const newOptions = { ...options, credentials: "include" as RequestCredentials };
+      const newOptions = { ...options };
       try {
         const res = await fetch(url, newOptions);
         if (res.status === 400 || res.status === 500 || res.status === 404) {
@@ -29,7 +29,7 @@ function useFetch<T = any>(url: string, options?: RequestInit): FetchResult<T> {
       }
       setLoading(false);
     };
-    send();
+    fetchData();
   }, [url, options]);
 
   return { data, error, loading };
