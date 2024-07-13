@@ -1,0 +1,10 @@
+.browserContainer {
+    background-color: #000;
+    /*background-color: #FEC247;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}

@@ -1,0 +1,261 @@
+/*.container {*/
+/*background-color: grey;*/
+/*}*/
+
+
+/*.container {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    !*min-height: 100vh;*!*/
+/*    height: 800px;*/
+/*    width: 800px;*/
+/*    !*background-image: url('/gameboy-frame.png');*!*/
+/*    background-color: red;*/
+/*    background-size: contain;*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: center;*/
+/*}*/
+
+/*.innerContainer {*/
+/*    width: 160px; !* Adjust the size as needed *!*/
+/*    height: 144px; !* Adjust the size as needed *!*/
+/*    background-color: #9bbc0f; !* Similar to Game Boy screen color *!*/
+/*}*/
+
+
+/* Layout.module.css */
+/* Layout.module.css */
+/* Layout.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+
+
+
+.container {
+    width: 60%;
+    height: 100vh;
+    /*background-color: #727488; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-top: 20px;
+    background-color: #FEC247;
+    border-radius: 55px 55px 0 0;
+    /*overflow: hidden;*/
+}
+
+.outerContainer {
+    width: 85%; /* Relative size to the container */
+    height: 85%; /* Relative size to the container */
+    /*background-color: #777777; */
+    background-color: #777777;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:3%;
+    border-radius: 10px 10px 70px 10px;
+    border: 5px solid #333333;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;*/
+}
+
+.innerContainer {
+    width: 85%; /* Relative size to the container */
+    height: 85%; /* Relative size to the container */
+    /*background-color: #4EA6FF;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:4%; /* Positioning the screen */
+    border-radius: 3px;
+    border: 5px solid #333333;
+}
+
+.consoleName {
+    position: absolute;
+    bottom: 4%;
+    font-family: "Viga", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 18px;
+}
+
+.buttonContainer {
+    position: absolute;
+    bottom: 1.5%;
+    justify-content: space-between;
+    /*밑에 width로 버튼 위치 조정 */
+    /*width: 100%;*/
+    padding: 10px;
+    /*height: 30px;*/
+    /*background-color: red;*/
+    /*background-color: black;*/
+}
+
+.arrowBtnGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*background-color: #4AB7AD;*/
+    background-color: #4AB7AD;
+
+    width: 200px;
+    padding: 10px;
+    border: 5px solid #333333;
+    border-radius: 40px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+
+/*버튼 시작 ========>*/
+
+
+button:hover,
+button:active {
+    outline: 0;
+}
+
+/* 3D Button */
+
+button.depth {
+    background: #ff0000; /* 빨간색으로 변경 */
+    border: none;
+    border-radius: 40px; /* 반지름도 절반으로 조정 */
+    box-shadow: inset 0 0 1px 1px hsla(0,0%,0%,.2),
+    inset 0 0 1px 2px hsla(0,0%,0%,.2),
+    inset 0 0 1px 3px hsla(0,0%,0%,.2),
+    inset 0 0 0.5px 4px hsla(0,0%,0%,.5),
+    inset 0 -2px 1px 2px hsla(0,0%,0%,.5),
+    inset 0 0.5px 0.5px 4px hsla(0,0%,100%,.25),
+    inset 0 -15px 15px hsla(0,0%,0%,.2),
+    0 -2px 4px 2px hsla(0,0%,0%,.5),
+    0 5px 5px hsla(0,0%,0%,.25),
+    0 0 1px 1px hsla(0,0%,0%,.2),
+    0 0 1px 2px hsla(0,0%,0%,.2),
+    0 0 1px 3px hsla(0,0%,0%,.2),
+    0 0 1px 4px hsla(0,0%,0%,.5),
+    0 0.5px 1px 4px hsla(0,0%,100%,.25),
+    0 -0.5px 1px 4px hsla(0,0%,0%,.5);
+    /*color: #303030;*/
+    color: white;
+    cursor: pointer;
+    font: bold 18px/42.5px sans-serif; /* 폰트 크기도 절반으로 조정 */
+    height: 40px; /* 높이 절반으로 조정 */
+    padding: 0;
+    text-shadow: 0 0.5px 0.5px hsla(0,0%,100%,.25),
+    0 -0.5px 0.5px hsla(0,0%,0%,.75);
+    width: 40px; /* 너비 절반으로 조정 */
+}
+button.depth:hover,
+button.depth:focus {
+    color: #0ab;
+    text-shadow: 0 0 10px hsla(240,75%,75%,.5),
+    0 0.5px 0.5px hsla(0,0%,100%,.25),
+    0 -0.5px 0.5px hsla(0,0%,0%,.75);
+}
+button.depth:active {
+    box-shadow: inset 0 0 1px 1px hsla(0,0%,0%,.2),
+    inset 0 0 1px 2px hsla(0,0%,0%,.2),
+    inset 0 0 1px 3px hsla(0,0%,0%,.2),
+    inset 0 0 0.5px 3.5px hsla(0,0%,0%,.5),
+    inset 0 2.5px 7.5px 3.5px hsla(0,0%,0%,.15),
+    inset 0 -2px 1px 1.5px hsla(0,0%,0%,.5),
+    inset 0 0.5px 0.5px 3.5px hsla(0,0%,100%,.25),
+    inset 0 -15px 15px hsla(0,0%,0%,.1),
+    inset 0 15px 15px hsla(0,0%,0%,.2),
+    0 -2px 4px 2px hsla(0,0%,0%,.5),
+    0 2.5px 5px hsla(0,0%,0%,.25),
+    0 0 1px 1px hsla(0,0%,0%,.2),
+    0 0 1px 2px hsla(0,0%,0%,.2),
+    0 0 1px 3px hsla(0,0%,0%,.2),
+    0 0 1px 4px hsla(0,0%,0%,.5),
+    0 0.5px 1px 4px hsla(0,0%,100%,.25),
+    0 -0.5px 1px 4px hsla(0,0%,0%,.5);
+    line-height: 43px; /* 라인 높이도 절반으로 조정 */
+}
+
+
+/*.leftBtn {*/
+/*    background: hsl(340deg 100% 32%);*/
+/*    border: none;*/
+/*    border-radius: 50%;*/
+/*    padding: 0;*/
+/*    cursor: pointer;*/
+/*    outline-offset: 4px;*/
+/*    margin-right: 20px;*/
+/*}*/
+
+/*.leftFront {*/
+/*    display: block;*/
+/*    padding: 12px 20px;*/
+/*    border-radius: 50%;*/
+/*    font-size: 1.25rem;*/
+/*    background: hsl(345deg 100% 47%);*/
+/*    color: white;*/
+/*    transform: translateY(-7px);*/
+/*}*/
+
+/*.leftBtn:active .leftFront {*/
+/*    transform: translateY(-2px);*/
+/*}*/
+
+
+
+/*.rightBtn {*/
+/*    background: #2C7330;*/
+/*    border: none;*/
+/*    border-radius: 50%;*/
+/*    padding: 0;*/
+/*    cursor: pointer;*/
+/*    outline-offset: 4px;*/
+/*    margin-right: 20px;*/
+/*}*/
+
+/*.rightFront {*/
+/*    display: block;*/
+/*    padding: 12px 20px;*/
+/*    border-radius: 50%;*/
+/*    font-size: 1.25rem;*/
+/*    background: #3EA444;*/
+/*    color: white;*/
+/*    transform: translateY(-7px);*/
+/*}*/
+
+/*.rightBtn:active .rightFront {*/
+/*    transform: translateY(-2px);*/
+/*}*/
+
+
+
+/*.startBtn {*/
+/*    background: #2060A1;*/
+/*    border: none;*/
+/*    border-radius: 15px;*/
+/*    padding: 0;*/
+/*    cursor: pointer;*/
+/*    outline-offset: 4px;*/
+/*    margin-left: 250px;*/
+
+/*}*/
+
+/*.startFront {*/
+/*    display: block;*/
+/*    padding: 12px 40px;*/
+/*    border-radius: 15px;*/
+/*    font-size: 1.25rem;*/
+/*    background: #268CF3;*/
+/*    color: white;*/
+/*    transform: translateY(-7px);*/
+/*}*/
+
+/*.startBtn:active .startFront {*/
+/*    transform: translateY(-2px);*/
+/*}*/
+
+
