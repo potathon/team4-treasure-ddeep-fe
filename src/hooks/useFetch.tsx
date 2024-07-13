@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 interface FetchResult<T> {
   data: T | null;
@@ -15,10 +15,12 @@ function useFetch<T = any>(url: string, options?: RequestInit): FetchResult<T> {
     const fetchData = async () => {
       setLoading(true);
       const newOptions = { ...options };
+
       try {
         const res = await fetch(url, newOptions);
-        if (res.status === 400 || res.status === 500 || res.status === 404) {
+        if (!res.ok) {
           setError(new Error(res.statusText));
+          setLoading(false);
           return;
         }
         const json = await res.json();
@@ -29,6 +31,7 @@ function useFetch<T = any>(url: string, options?: RequestInit): FetchResult<T> {
       }
       setLoading(false);
     };
+
     fetchData();
   }, [url, options]);
 

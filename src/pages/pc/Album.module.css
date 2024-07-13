@@ -11,6 +11,29 @@
     align-items: center;
 }
 
+.arrowBtn {
+    position: absolute;
+    top: 3%;
+    left: 1%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    z-index: 100;
+}
+
+.backArrow {
+    width: 80px;
+    cursor: pointer;
+}
+
+.arrowBtn:hover {
+    transform: scale(1.13); /* 크기 1.2배로 조정 */
+}
+
+.backArrow:hover {
+    transform: scale(1.13); /* 크기 1.2배로 조정 */
+}
+
 .album {
     width: 100%; /* Set width to 100% */
     height: 100%; /* Set height to 100% */
