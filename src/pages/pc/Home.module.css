@@ -43,56 +43,124 @@
     border: none;
 }
 
+.pointerText {
+    color: #FAE10C;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px black;
+    visibility: hidden; /* 기본적으로 숨김 */
+    opacity: 0;
+}
+
+
+
 .pointer1 {
     width: 50px;
     height: 50px;
-    position: absolute;
-    top: 45%;
-    right: 20%;
+
     /*transform: translate(-20%, -45%);*/
+}
+
+.pointerGroup1 {
+    width: 80px;
+    height: 50px;
+    position: absolute;
+    top: 43%;
+    right: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pointer2 {
     width: 50px;
     height: 50px;
-    position: absolute;
-    top: 50%;
-    right: 34%;
+
     /*transform: translate(-20%, -45%);*/
 }
+
+.pointerGroup2 {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    right: 29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 .pointer3 {
     width: 50px;
     height: 50px;
+}
+
+.pointerGroup3 {
+    width: 80px;
+    height: 50px;
     position: absolute;
     top: 36%;
     left: 34%;
-    /*transform: translate(-20%, -45%);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pointer4 {
     width: 50px;
     height: 50px;
+
+}
+
+.pointerGroup4 {
+    width: 100px;
+    height: 50px;
     position: absolute;
-    top: 49%;
-    left: 20%;
-    /*transform: translate(-20%, -45%);*/
-}
-
-
-
-.pointerContainer button:hover .pointer1 {
-    top: 44%;
-}
-
-.pointerContainer button:hover .pointer2 {
-    top: 49%;
-}
-
-.pointerContainer button:hover .pointer3 {
-    top: 35%;
-}
-
-.pointerContainer button:hover .pointer4 {
     top: 48%;
+    left: 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+/*top 원래 그룹에서 -2*/
+.pointerGroup1:hover  {
+    top: 41%;
+}
+
+.pointerGroup2:hover {
+    top: 48%;
+}
+
+.pointerGroup3:hover {
+    top: 34%;
+}
+
+.pointerGroup4:hover {
+    top: 46%;
+}
+
+
+
+.pointerGroup1:hover .pointerText {
+    visibility: visible; /* 호버 시 보임 */
+    opacity: 1;
+}
+
+
+.pointerGroup2:hover .pointerText {
+    visibility: visible; /* 호버 시 보임 */
+    opacity: 1;
+}
+
+.pointerGroup3:hover .pointerText {
+    visibility: visible; /* 호버 시 보임 */
+    opacity: 1;
+}
+
+.pointerGroup4:hover .pointerText {
+    visibility: visible; /* 호버 시 보임 */
+    opacity: 1;
 }

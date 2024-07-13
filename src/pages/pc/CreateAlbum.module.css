@@ -52,6 +52,18 @@
     margin: 7px;
 }
 
+.closeBtn {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    margin: 5px 2px 5px 495px;
+}
+
+.closeBtn img {
+    width: 30px;
+    height: 30px;
+}
+
 .innerContainer {
     width: 90%;
     height: 90%;
