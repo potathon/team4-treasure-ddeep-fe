@@ -9,20 +9,21 @@
 
 .albumItem {
     width: 50%;
-    height: 100%;
+    height: 98%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     /*background-color: red;*/
     align-items: center;
     /*margin-right: 20px;*/
+    margin-top: 8px;
 }
 
 .imageContainer {
     /*padding: 10px;*/
     /*height: 60%;*/
-    width: 70%;
-    height: 90%;
+    width: 75%;
+    height: 95%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -33,8 +34,14 @@
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     /*padding: 10px 5px 30px 5px;*/
     /*margin: 5px 5px 20px 5px;*/
+}
 
-
+.postImg {
+    background-color: black;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /*.polaroid {*/
@@ -48,15 +55,16 @@
 /*}*/
 
 .image {
-    height: 80px;
-    width: 180px;
+    height: 95px;
+    width: auto;
     display: block;
     /*margin: 0 auto;*/
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 .title {
-    font-size: 22px;
+    font-size: 18px;
+    margin-top: 4px;
 }
 
 .infoContainer {
@@ -64,13 +72,17 @@
     width: 70%;
     color: black;
     margin-top: 10px;
+    font-size: 14px;
+
 }
 
 .infoItem {
     margin-bottom: 5px;
+
 }
 
 .content {
     /*margin-top: 10px;*/
     margin-bottom: 70px;
+
 }

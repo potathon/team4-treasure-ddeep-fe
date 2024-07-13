@@ -109,7 +109,6 @@
 .pointer4 {
     width: 50px;
     height: 50px;
-
 }
 
 .pointerGroup4 {
@@ -117,10 +116,48 @@
     height: 50px;
     position: absolute;
     top: 48%;
-    left: 19%;
+    left: 23%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.pointerCloud {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 29%;
+    left: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pointerCloud span  {
+    margin-left: 3px;
+}
+
+
+.pointerTextCloud {
+    color: #00A0FF;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px white;
+    visibility: hidden; /* 기본적으로 숨김 */
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+
+}
+
+
+.pointerCloud {
+    width: 85px;
+    height: 85px;
 }
 
 
@@ -142,7 +179,15 @@
     top: 46%;
 }
 
+.pointerCloud:hover {
+    top: 27%;
+}
 
+
+.pointerCloud:hover .pointerTextCloud {
+    visibility: visible; /* 호버 시 보임 */
+    opacity: 1;
+}
 
 .pointerGroup1:hover .pointerText {
     visibility: visible; /* 호버 시 보임 */

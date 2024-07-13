@@ -7,6 +7,7 @@ import Pointer1 from '../../assets/images/pointer_1.png';
 import Pointer2 from '../../assets/images/pointer_2.png';
 import Pointer3 from '../../assets/images/pointer_3.png';
 import Pointer4 from '../../assets/images/pointer_4.png';
+import Cloud from '../../assets/images/cloud.png';
 
 const HomePC: React.FC = () => {
   const navigate = useNavigate();
@@ -64,6 +65,16 @@ const HomePC: React.FC = () => {
               onClick={() => handleButtonClick('서귀포남서쪽')}
             >
               <img src={Pointer4} alt="Pointer" className={styles.pointer4} />
+            </button>
+          </div>
+
+          <div className={styles.pointerCloud}>
+            <span className={styles.pointerTextCloud}>구름스퀘어</span>
+            <button
+              className={styles.pointerButton}
+              onClick={() => handleButtonClick('구름스퀘어')}
+            >
+              <img src={Cloud} alt="Pointer" className={styles.pointerCloud} />
             </button>
           </div>
           <button

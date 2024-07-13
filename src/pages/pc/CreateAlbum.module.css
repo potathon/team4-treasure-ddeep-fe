@@ -56,7 +56,7 @@
     position: relative;
     background-color: transparent;
     border: none;
-    margin: 5px 2px 5px 495px;
+    margin: 6px 2px 5px 482px;
 }
 
 .closeBtn img {
@@ -114,14 +114,14 @@
     width: 48%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
 }
 
 .titleInput {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     margin-bottom: 20px;
 }
 
@@ -129,7 +129,7 @@
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     margin-bottom: 20px;
 }
 
@@ -138,7 +138,7 @@
     height: 100px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     resize: none;
 }
 
@@ -151,9 +151,21 @@
 .input,
 .titleInput,
 .dropdown,
-.textArea,
+.textArea {
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;*/
+    /*box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.8) -3px -3px 6px 1px inset;*/
+    border-bottom: 3px solid white; /* 아래쪽 border 검정색 */
+    border-right: 3px solid white;  /* 오른쪽 border 검정색 */
+    border-left: 3px solid black;   /* 왼쪽 border 흰색 */
+    border-top: 3px solid black;    /* 위쪽 border 흰색 */
+    outline: none;
+}
 
 .submitBtn {
     /*box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;*/
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.8) -3px -3px 6px 1px inset;
+    /*box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.8) -3px -3px 6px 1px inset;*/
+    border-bottom: 3px solid black; /* 아래쪽 border 검정색 */
+    border-right: 3px solid black;  /* 오른쪽 border 검정색 */
+    border-left: 3px solid white;   /* 왼쪽 border 흰색 */
+    border-top: 3px solid white;    /* 위쪽 border 흰색 */
 }

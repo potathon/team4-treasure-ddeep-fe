@@ -4,6 +4,7 @@ import styles from './Album.module.css';
 import Layout from '../../components/layout/Layout';
 import AlbumItem from '../../components/AlbumItem';
 import BackArrow from '../../assets/images/arrow_back.png';
+import AlbumTitle from '../../assets/images/album_title.png';
 import useFetch from '../../hooks/useFetch';
 import { SERVER_URL } from '../../utils/static';
 
@@ -45,9 +46,20 @@ const AlbumPC: React.FC = () => {
   return (
     <Layout>
       <div className={styles.container}>
-        <button className={styles.arrowBtn} onClick={() => navigate('/home')}>
-          <img src={BackArrow} alt="arrow" className={styles.backArrow} />
-        </button>
+        <div className={styles.topContainer}>
+          <button className={styles.arrowBtn} onClick={() => navigate('/home')}>
+            <img src={BackArrow} alt="arrow" className={styles.backArrow} />
+          </button>
+          <div className={styles.titleContainer}>
+            <img
+              src={AlbumTitle}
+              alt="title"
+              className={styles.albumTitleImg}
+            />
+            <div className={styles.albumTitleText}>제주도 북서쪽</div>
+          </div>
+        </div>
+
         <div className={styles.album}>
           <div className={styles.contentContainer}>
             {loading && <p></p>}
