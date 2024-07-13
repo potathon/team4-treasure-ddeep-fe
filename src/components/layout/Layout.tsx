@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Layout.module.css';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { AiFillHome } from 'react-icons/ai';
 import { useNavigate, useLocation } from 'react-router-dom';
+import On from '../../assets/images/on_btn.png';
+import Off from '../../assets/images/off_btn.png';
 
 const Layout = (props: { children: React.ReactNode }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [isOn, setIsOn] = useState(false);
 
   const handleHomeClick = () => {
     navigate('/');
@@ -30,6 +33,11 @@ const Layout = (props: { children: React.ReactNode }) => {
     }
   };
 
+  const handlePowerClick = () => {
+    setIsOn(prevIsOn => !prevIsOn);
+    navigate(isOn ? '/' : '/loading');
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.outerContainer}>
@@ -37,6 +45,7 @@ const Layout = (props: { children: React.ReactNode }) => {
         <div className={styles.consoleName}>KtbsStation 5</div>
       </div>
       <div className={styles.buttonContainer}>
+        <div className={styles.emptyBox}></div>
         <div className={styles.arrowBtnGroup}>
           <button
             className={styles.depth}
@@ -58,6 +67,16 @@ const Layout = (props: { children: React.ReactNode }) => {
             onClick={() => handleArrowClick('right')}
           >
             <FaArrowRight />
+          </button>
+        </div>
+        <div className={styles.emptyBox}>
+          <button className={styles.powerBtnGroup} onClick={handlePowerClick}>
+            <img
+              src={isOn ? On : Off}
+              alt="Power_Btn"
+              className={styles.powerBtn}
+            />
+            <span>{isOn ? 'On' : 'Off'}</span>
           </button>
         </div>
       </div>

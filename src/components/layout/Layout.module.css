@@ -57,7 +57,7 @@
 
 .outerContainer {
     width: 85%; /* Relative size to the container */
-    height: 85%; /* Relative size to the container */
+    height: 83%; /* Relative size to the container */
     /*background-color: #777777; */
     background-color: #777777;
     display: flex;
@@ -92,18 +92,6 @@
     font-style: normal;
     color: white;
     font-size: 18px;
-}
-
-.buttonContainer {
-    position: absolute;
-    bottom: 1.5%;
-    justify-content: space-between;
-    /*밑에 width로 버튼 위치 조정 */
-    /*width: 100%;*/
-    padding: 10px;
-    /*height: 30px;*/
-    /*background-color: red;*/
-    /*background-color: black;*/
 }
 
 .arrowBtnGroup {
@@ -187,6 +175,51 @@ button.depth:active {
     0 0.5px 1px 4px hsla(0,0%,100%,.25),
     0 -0.5px 1px 4px hsla(0,0%,0%,.5);
     line-height: 43px; /* 라인 높이도 절반으로 조정 */
+}
+
+
+
+/*전원버튼 ======>*/
+
+.buttonContainer {
+    position: absolute;
+    bottom: 1.5%;
+    justify-content: space-between;
+    /*밑에 width로 버튼 위치 조정 */
+    /*width: 100%;*/
+    padding: 10px;
+    /*height: 30px;*/
+    /*background-color: black;*/
+    /*background-color: black;*/
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    align-items: center;
+}
+
+
+.emptyBox {
+    width: 100px;
+    /*background-color: red;*/
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.powerBtnGroup {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.powerBtnGroup span {
+    margin: 2.5px 0 0 4px ;
+}
+
+.powerBtn {
+    width: 25px;
+    height: 25px;
 }
 
 
