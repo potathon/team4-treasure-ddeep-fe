@@ -1,8 +1,6 @@
 .container {
     width: 100%;
     height: 100%;
-    /*background-image: url("../../../src/images/home_bg.png");*/
-    /*background-color: red;*/
     background-image: url('../../assets/images/home_bg.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,11 +13,11 @@
 }
 
 .button {
-    position: absolute; /* Position the button relative to the container */
-    bottom: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    width: 90px; /* Adjust as needed */
-    height: 90px; /* Adjust as needed */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
     background-image: url('../../assets/images/treasure_btn_close.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -31,4 +29,70 @@
 
 .button:hover {
     background-image: url('../../assets/images/treasure_btn_open.png');
+}
+
+/* 포인터 ============> */
+.pointerContainer {
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+}
+
+.pointerContainer button {
+    background-color: transparent;
+    border: none;
+}
+
+.pointer1 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 45%;
+    right: 20%;
+    /*transform: translate(-20%, -45%);*/
+}
+
+.pointer2 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    right: 34%;
+    /*transform: translate(-20%, -45%);*/
+}
+
+.pointer3 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 36%;
+    left: 34%;
+    /*transform: translate(-20%, -45%);*/
+}
+
+.pointer4 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 49%;
+    left: 20%;
+    /*transform: translate(-20%, -45%);*/
+}
+
+
+
+.pointerContainer button:hover .pointer1 {
+    top: 44%;
+}
+
+.pointerContainer button:hover .pointer2 {
+    top: 49%;
+}
+
+.pointerContainer button:hover .pointer3 {
+    top: 35%;
+}
+
+.pointerContainer button:hover .pointer4 {
+    top: 48%;
 }

@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         font-family: 'DungGeunMo', sans-serif;
     }
+    
+    button{
+        cursor: pointer;
+    }
 `;
 
 export default GlobalStyle;
