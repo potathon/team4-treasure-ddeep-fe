@@ -43,6 +43,15 @@
     margin-top: 20px;
     background-color: #FEC247;
     border-radius: 55px 55px 0 0;
+    box-shadow: -2px -0px 0px #E3A017,-0px -3px 0px #E3A017,
+    -2px -1px 0px #E3A017,-1px -2px 0px #E3A017,
+    -3px -2px 0px #E3A017,-2px -3px 0px #E3A017,
+    -4px -3px 0px #E3A017,-3px -4px 0px #E3A017,
+    -5px -4px 0px #E3A017,-4px -5px 0px #E3A017,
+    -6px -5px 0px #E3A017,-5px -6px 0px #E3A017,
+    -7px -6px 0px #E3A017,-6px -7px 0px #E3A017,
+    -8px -7px 0px #E3A017,-7px -8px 0px #E3A017,
+    -9px -8px 0px #E3A017,-8px -9px 0px #E3A017;
     /*overflow: hidden;*/
 }
 
@@ -257,5 +266,4 @@ button.depth:active {
 /*.startBtn:active .startFront {*/
 /*    transform: translateY(-2px);*/
 /*}*/
-
 

@@ -164,3 +164,30 @@
     visibility: visible; /* 호버 시 보임 */
     opacity: 1;
 }
+
+
+/*비디오 =========>*/
+.videoContainer {
+    position: absolute;
+    top: 20%;
+    left: 2.5%;
+    width: 590px;
+    height: 340px;
+    overflow: hidden;
+    border-width: 0 10px 15px 0;
+    border-style: solid;
+    border-color: black;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C5CCCE;
+    padding: 20px;
+
+}
+
+.video {
+    width: 580px;
+    height: 300px;
+    object-fit: cover; /* Ensures the video covers the entire container without distortion */
+}
