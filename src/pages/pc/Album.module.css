@@ -23,11 +23,11 @@
 
 .albumTitleImg {
     position: absolute;
-    top: 2%;
-    left: 22%;
+    top: 4%;
+    left: 23%;
     /*cursor: pointer;*/
-    width: 350px;
-    height: 100px;
+    width: 330px;
+    height: 80px;
     z-index: 100;
 }
 
