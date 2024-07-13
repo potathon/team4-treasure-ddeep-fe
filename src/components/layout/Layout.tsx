@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Layout.module.css';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { AiFillHome } from 'react-icons/ai';
+import { FaArrowLeft, FaArrowRight, FaPowerOff } from 'react-icons/fa';
 import { useNavigate, useLocation } from 'react-router-dom';
 import On from '../../assets/images/on_btn.png';
 import Off from '../../assets/images/off_btn.png';
@@ -9,10 +8,31 @@ import Off from '../../assets/images/off_btn.png';
 const Layout = (props: { children: React.ReactNode }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [isOn, setIsOn] = useState(false);
+  const [powerOn, setPowerOn] = useState(false);
+  const [BtnOn, setBtnOn] = useState(false);
 
-  const handleHomeClick = () => {
-    navigate('/');
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setBtnOn(false);
+    } else {
+      setBtnOn(true);
+    }
+  }, [location.pathname]);
+
+  const handlePowerClick = () => {
+    setBtnOn(!BtnOn);
+    console.log(BtnOn);
+    if (location.pathname !== '/') {
+      navigate('/');
+      setPowerOn(false);
+    } else {
+      if (powerOn) {
+        setPowerOn(false);
+      } else {
+        navigate('/loading');
+        setPowerOn(true);
+      }
+    }
   };
 
   const handleArrowClick = (direction: 'left' | 'right') => {
@@ -31,11 +51,6 @@ const Layout = (props: { children: React.ReactNode }) => {
         search: searchParams.toString(),
       });
     }
-  };
-
-  const handlePowerClick = () => {
-    setIsOn(prevIsOn => !prevIsOn);
-    navigate(isOn ? '/' : '/loading');
   };
 
   return (
@@ -57,9 +72,9 @@ const Layout = (props: { children: React.ReactNode }) => {
           <button
             className={styles.depth}
             type="button"
-            onClick={handleHomeClick}
+            onClick={handlePowerClick}
           >
-            <AiFillHome />
+            <FaPowerOff />
           </button>
           <button
             className={styles.depth}
@@ -70,14 +85,14 @@ const Layout = (props: { children: React.ReactNode }) => {
           </button>
         </div>
         <div className={styles.emptyBox}>
-          <button className={styles.powerBtnGroup} onClick={handlePowerClick}>
+          <div className={styles.powerBtnGroup}>
             <img
-              src={isOn ? On : Off}
-              alt="Power_Btn"
+              src={BtnOn ? On : Off}
+              alt={BtnOn ? 'On_Btn' : 'Off_Btn'}
               className={styles.powerBtn}
             />
-            <span>{isOn ? 'On' : 'Off'}</span>
-          </button>
+            <span>{BtnOn ? 'On' : 'Off'}</span>
+          </div>
         </div>
       </div>
     </div>
