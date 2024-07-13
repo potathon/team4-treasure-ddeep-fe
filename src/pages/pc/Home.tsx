@@ -23,6 +23,8 @@ const HomePC: React.FC = () => {
     setTimeout(() => {
       navigate(`/album?location=${location}`);
     }, 2500); // 4 seconds
+
+    navigate(`/album?location=${encodeURIComponent(location)}`);
   };
 
   return (

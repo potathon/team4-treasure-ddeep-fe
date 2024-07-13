@@ -9,6 +9,9 @@ const CreateAlbumPC: React.FC = () => {
   const [password, setPassword] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [location, setLocation] = useState('');
+  const [image, setImage] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string>('');
   const navigate = useNavigate();
 
   const handleNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,32 +26,54 @@ const CreateAlbumPC: React.FC = () => {
   const handleContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
   };
+  const handelLocation = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setLocation(e.target.value);
+  };
+  const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files ? e.target.files[0] : null;
+    if (file) {
+      setImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        if (reader.result) {
+          setPreview(reader.result.toString());
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   const handleButtonClick = () => {
     navigate('/home');
   };
 
   const submit_post = () => {
-    if (nickname === '' || password === '' || title === '' || content === '') {
+    if (image === null || nickname === '' || password === '' || title === '' || content === '') {
       alert('모든 내용을 입력해주세요');
       return;
     } else {
-      fetch('http://localhost:3000/posts', {
+      const formData = new FormData();
+      formData.append('nickname', nickname);
+      formData.append('password', password);
+      formData.append('title', title);
+      formData.append('location', location)
+      formData.append('content', content);
+      formData.append('post_image_path', image);
+      console.log(formData)
+      fetch('http://125.130.247.176:9008/posts', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          nickname: nickname,
-          password: password,
-          title: title,
-          content: content,
-        }),
+        body: formData,
       }).then(res => {
         if (res.ok) {
-          // setInvalidMessage("");
           alert('등록 완료');
+        }else{
+          return res.json().then((data) => {
+            throw new Error(data.message || 'Something went wrong');
+          });
         }
+      }).catch(err => {
+        console.error('Error:', err);
+        alert(`업로드 중 오류 발생`);
       });
     }
   };
@@ -62,7 +87,10 @@ const CreateAlbumPC: React.FC = () => {
             </button>
           </div>
           <div className={styles.innerContainer}>
-            <div className={styles.imageContainer}></div>
+            <div className={styles.imageContainer}>
+              {preview && <img src={preview} alt="upload preview" />}
+              <input type='file' accept='image/*' onChange={handleImage} />
+            </div>
             <div className={styles.inputRow}>
               <input
                 type="text"
@@ -86,11 +114,11 @@ const CreateAlbumPC: React.FC = () => {
               className={styles.titleInput}
               onChange={handleTitle}
             />
-            <select className={styles.dropdown}>
-              <option value="jeju-northeast">제주 북동쪽</option>
-              <option value="jeju-northwest">제주 북서쪽</option>
-              <option value="seogwipo-southeast">서귀포 남동쪽</option>
-              <option value="seogwipo-southwest">서귀포 남서쪽</option>
+            <select className={styles.dropdown} value={location} onChange={handelLocation}>
+              <option value="제주북동쪽">제주 북동쪽</option>
+              <option value="제주북서쪽">제주 북서쪽</option>
+              <option value="서귀포남동쪽">서귀포 남동쪽</option>
+              <option value="서귀포남서쪽">서귀포 남서쪽</option>
             </select>
             <textarea
               value={content}

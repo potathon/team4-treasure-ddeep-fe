@@ -1,44 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import styles from './AlbumItem.module.css';
 import useFetch from '../hooks/useFetch';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import albumData from '../datas/albumdata.json'
-interface PostData {
+interface AlbumData {
+  id : string;
   title: string;
   post_image_path: string;
   update_at: string;
   nickname: string;
   content: string;
 }
-
-const AlbumItem: React.FC = () => {
-  const { location } = useParams();
-  // const { data, error, loading } = useFetch(
-  //   "http://localhost:8081/posts?location="+location
-  // );
-
-  const [data, setData] = useState<PostData[]>([]);
-  
-  useEffect(() => {
-    setData(albumData.album.data);
-  }, []);
+const useQuery = () => {
+  return new URLSearchParams(useLocation().search);
+};
+const AlbumItem: React.FC = () => {  
+  const query = useQuery();
+  const location = query.get('location');
+  const { data, error, loading } = useFetch(
+    location ? `http://125.130.247.176:9008/posts?location=${encodeURIComponent(location)}` : ''
+  );
 
   return (
     <div className={styles.container} >
-    {data.map((data, index) => (
-      <div key={index} className={styles.albumItem}>
-        <div className={styles.title}>{data?.title}</div>
+      {data?.data.map((item: AlbumData) => (
+      <div key={item.id} className={styles.albumItem}>
+        <div className={styles.title}>{item?.title}</div>
         <div className={styles.imageContainer}>
-          <div className={styles.image}>{data?.post_image_path}</div>
+          <img className={styles.image} src={"http://125.130.247.176:9008"+item?.post_image_path}></img>
         </div>
         <div className={styles.infoContainer}>
           <div className={styles.infoItem}>
-            날짜: <span>{data?.update_at}</span>
+            날짜: <span>{item?.update_at}</span>
           </div>
           <div className={styles.infoItem}>
-            작성자: <span>{data?.nickname}</span>
+            작성자: <span>{item?.nickname}</span>
           </div>
-          <div className={styles.content}>{data?.content}</div>
+          <div className={styles.content}>{item?.content}</div>
         </div>
       </div>
       ))}
