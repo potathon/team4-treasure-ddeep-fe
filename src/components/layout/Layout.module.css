@@ -43,15 +43,21 @@
     margin-top: 20px;
     background-color: #FEC247;
     border-radius: 55px 55px 0 0;
-    box-shadow: -2px -0px 0px #E3A017,-0px -3px 0px #E3A017,
-    -2px -1px 0px #E3A017,-1px -2px 0px #E3A017,
-    -3px -2px 0px #E3A017,-2px -3px 0px #E3A017,
-    -4px -3px 0px #E3A017,-3px -4px 0px #E3A017,
-    -5px -4px 0px #E3A017,-4px -5px 0px #E3A017,
-    -6px -5px 0px #E3A017,-5px -6px 0px #E3A017,
-    -7px -6px 0px #E3A017,-6px -7px 0px #E3A017,
-    -8px -7px 0px #E3A017,-7px -8px 0px #E3A017,
-    -9px -8px 0px #E3A017,-8px -9px 0px #E3A017;
+    box-shadow: 2px 0px 0px #E3A017, 3px 0px 0px #E3A017,
+    4px 0px 0px #E3A017, 5px 0px 0px #E3A017,
+    6px 0px 0px #E3A017, 7px 0px 0px #E3A017,
+    8px 0px 0px #E3A017, 9px 0px 0px #E3A017,
+    10px 0px 0px #E3A017, 11px 0px 0px #E3A017,
+    12px 0px 0px #E3A017, 13px 0px 0px #E3A017,
+    14px 0px 0px #E3A017, 15px 0px 0px #E3A017,
+    16px 0px 0px #E3A017, 17px 0px 0px #E3A017,
+    18px 0px 0px #E3A017, 19px 0px 0px #E3A017;
+
+
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+    border: 4px solid rgba(255, 255, 255, 0.42);
+
     /*overflow: hidden;*/
 }
 
@@ -82,6 +88,9 @@
     top:4%; /* Positioning the screen */
     border-radius: 3px;
     border: 5px solid #333333;
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+
 }
 
 .consoleName {

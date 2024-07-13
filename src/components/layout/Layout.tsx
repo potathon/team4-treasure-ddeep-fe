@@ -91,7 +91,7 @@ const Layout = (props: { children: React.ReactNode }) => {
               alt={BtnOn ? 'On_Btn' : 'Off_Btn'}
               className={styles.powerBtn}
             />
-            <span>{BtnOn ? 'On' : 'Off'}</span>
+            <span>{BtnOn ? 'Onㅤ' : 'Off'}</span>
           </div>
         </div>
       </div>
