@@ -19,10 +19,13 @@ const AlbumItem: React.FC<AlbumItemProps> = ({ item }) => {
   return (
     <div key={item.id} className={styles.albumItem}>
       <div className={styles.imageContainer}>
-        <img
-          className={styles.image}
-          src={SERVER_URL + item.post_image_path}
-        ></img>
+        <div className={styles.postImg}>
+          <img
+            className={styles.image}
+            src={SERVER_URL + item.post_image_path}
+          ></img>
+        </div>
+
         <div className={styles.title}>{item.title}</div>
       </div>
       <div className={styles.infoContainer}>
