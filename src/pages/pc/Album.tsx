@@ -5,6 +5,7 @@ import Layout from '../../components/layout/Layout';
 import AlbumItem from '../../components/AlbumItem';
 import BackArrow from '../../assets/images/arrow_back.png';
 import useFetch from '../../hooks/useFetch';
+import { SERVER_URL } from '../../utils/static';
 
 const AlbumPC: React.FC = () => {
   const itemsPerPage = 2;
@@ -16,7 +17,7 @@ const AlbumPC: React.FC = () => {
 
   const { data, error, loading } = useFetch(
     albumLocation
-      ? `http://125.130.247.176:9008/posts?location=${encodeURIComponent(albumLocation)}&page=${currentPage}`
+      ? `${SERVER_URL}/posts?location=${encodeURIComponent(albumLocation)}&page=${currentPage}`
       : '',
   );
 

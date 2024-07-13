@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './AlbumItem.module.css';
+import { SERVER_URL } from '../utils/static';
 
 interface AlbumData {
   id: string;
@@ -21,7 +22,7 @@ const AlbumItem: React.FC<AlbumItemProps> = ({ item }) => {
       <div className={styles.imageContainer}>
         <img
           className={styles.image}
-          src={'http://125.130.247.176:9008' + item.post_image_path}
+          src={SERVER_URL + item.post_image_path}
         ></img>
       </div>
       <div className={styles.infoContainer}>

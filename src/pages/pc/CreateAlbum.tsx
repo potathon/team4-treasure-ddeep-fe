@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './CreateAlbum.module.css';
 import Layout from '../../components/layout/Layout';
 import CloseBtn from '../../assets/images/button.png';
+import { SERVER_URL } from '../../utils/static';
 
 const CreateAlbumPC: React.FC = () => {
   const [nickname, setNickname] = useState('');
@@ -48,7 +49,17 @@ const CreateAlbumPC: React.FC = () => {
   };
 
   const submit_post = () => {
+<<<<<<< HEAD
     if (image === null || nickname === '' || password === '' || title === '' || content === '' || location === '') {
+=======
+    if (
+      image === null ||
+      nickname === '' ||
+      password === '' ||
+      title === '' ||
+      content === ''
+    ) {
+>>>>>>> 5088e05 (fix pagination)
       alert('모든 내용을 입력해주세요');
       return;
     } else {
@@ -56,13 +67,14 @@ const CreateAlbumPC: React.FC = () => {
       formData.append('nickname', nickname);
       formData.append('password', password);
       formData.append('title', title);
-      formData.append('location', location)
+      formData.append('location', location);
       formData.append('content', content);
       formData.append('post_image_path', image);
-      console.log(formData)
-      fetch('http://125.130.247.176:9008/posts', {
+      console.log(formData);
+      fetch(SERVER_URL, {
         method: 'POST',
         body: formData,
+<<<<<<< HEAD
       }).then(res => {
         if (res.ok) {
           alert('등록 완료');
@@ -76,6 +88,22 @@ const CreateAlbumPC: React.FC = () => {
         console.error('Error:', err);
         alert(`업로드 중 오류 발생`);
       });
+=======
+      })
+        .then(res => {
+          if (res.ok) {
+            alert('등록 완료');
+          } else {
+            return res.json().then(data => {
+              throw new Error(data.message || 'Something went wrong');
+            });
+          }
+        })
+        .catch(err => {
+          console.error('Error:', err);
+          alert(`업로드 중 오류 발생`);
+        });
+>>>>>>> 5088e05 (fix pagination)
     }
   };
   return (
@@ -90,7 +118,11 @@ const CreateAlbumPC: React.FC = () => {
           <div className={styles.innerContainer}>
             <div className={styles.imageContainer}>
               {preview && <img src={preview} alt="upload preview" />}
+<<<<<<< HEAD
               {!image &&<input type='file' accept='image/*' onChange={handleImage} />}
+=======
+              <input type="file" accept="image/*" onChange={handleImage} />
+>>>>>>> 5088e05 (fix pagination)
             </div>
             <div className={styles.inputRow}>
               <input
@@ -115,7 +147,11 @@ const CreateAlbumPC: React.FC = () => {
               className={styles.titleInput}
               onChange={handleTitle}
             />
-            <select className={styles.dropdown} value={location} onChange={handelLocation}>
+            <select
+              className={styles.dropdown}
+              value={location}
+              onChange={handelLocation}
+            >
               <option value="제주북동쪽">제주 북동쪽</option>
               <option value="제주북서쪽">제주 북서쪽</option>
               <option value="서귀포남동쪽">서귀포 남동쪽</option>
