@@ -18,12 +18,12 @@ interface AlbumItemProps {
 const AlbumItem: React.FC<AlbumItemProps> = ({ item }) => {
   return (
     <div key={item.id} className={styles.albumItem}>
-      <div className={styles.title}>{item.title}</div>
       <div className={styles.imageContainer}>
         <img
           className={styles.image}
           src={SERVER_URL + item.post_image_path}
         ></img>
+        <div className={styles.title}>{item.title}</div>
       </div>
       <div className={styles.infoContainer}>
         <div className={styles.infoItem}>

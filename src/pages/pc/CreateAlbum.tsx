@@ -27,7 +27,7 @@ const CreateAlbumPC: React.FC = () => {
   const handleContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setContent(e.target.value);
   };
-  const handelLocation = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleLocation = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLocation(e.target.value);
   };
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,64 +48,47 @@ const CreateAlbumPC: React.FC = () => {
     navigate('/home');
   };
 
-  const submit_post = () => {
-<<<<<<< HEAD
-    if (image === null || nickname === '' || password === '' || title === '' || content === '' || location === '') {
-=======
+  const submitPost = () => {
     if (
       image === null ||
       nickname === '' ||
       password === '' ||
       title === '' ||
-      content === ''
+      content === '' ||
+      location === ''
     ) {
->>>>>>> 5088e05 (fix pagination)
       alert('모든 내용을 입력해주세요');
       return;
-    } else {
-      const formData = new FormData();
-      formData.append('nickname', nickname);
-      formData.append('password', password);
-      formData.append('title', title);
-      formData.append('location', location);
-      formData.append('content', content);
-      formData.append('post_image_path', image);
-      console.log(formData);
-      fetch(SERVER_URL, {
-        method: 'POST',
-        body: formData,
-<<<<<<< HEAD
-      }).then(res => {
+    }
+
+    const formData = new FormData();
+    formData.append('nickname', nickname);
+    formData.append('password', password);
+    formData.append('title', title);
+    formData.append('location', location);
+    formData.append('content', content);
+    formData.append('post_image_path', image);
+
+    fetch(`${SERVER_URL}/posts`, {
+      method: 'POST',
+      body: formData,
+    })
+      .then(res => {
         if (res.ok) {
           alert('등록 완료');
           navigate('/home');
-        }else{
-          return res.json().then((data) => {
+        } else {
+          return res.json().then(data => {
             throw new Error(data.message || 'Something went wrong');
           });
         }
-      }).catch(err => {
-        console.error('Error:', err);
-        alert(`업로드 중 오류 발생`);
-      });
-=======
       })
-        .then(res => {
-          if (res.ok) {
-            alert('등록 완료');
-          } else {
-            return res.json().then(data => {
-              throw new Error(data.message || 'Something went wrong');
-            });
-          }
-        })
-        .catch(err => {
-          console.error('Error:', err);
-          alert(`업로드 중 오류 발생`);
-        });
->>>>>>> 5088e05 (fix pagination)
-    }
+      .catch(err => {
+        console.error('Error:', err);
+        alert('업로드 중 오류 발생');
+      });
   };
+
   return (
     <Layout>
       <div className={styles.container}>
@@ -118,11 +101,14 @@ const CreateAlbumPC: React.FC = () => {
           <div className={styles.innerContainer}>
             <div className={styles.imageContainer}>
               {preview && <img src={preview} alt="upload preview" />}
-<<<<<<< HEAD
-              {!image &&<input type='file' accept='image/*' onChange={handleImage} />}
-=======
-              <input type="file" accept="image/*" onChange={handleImage} />
->>>>>>> 5088e05 (fix pagination)
+              {!image && (
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImage}
+                  className={styles.fileBtn}
+                />
+              )}
             </div>
             <div className={styles.inputRow}>
               <input
@@ -150,7 +136,7 @@ const CreateAlbumPC: React.FC = () => {
             <select
               className={styles.dropdown}
               value={location}
-              onChange={handelLocation}
+              onChange={handleLocation}
             >
               <option value="제주북동쪽">제주 북동쪽</option>
               <option value="제주북서쪽">제주 북서쪽</option>
@@ -163,7 +149,12 @@ const CreateAlbumPC: React.FC = () => {
               className={styles.textArea}
               onChange={handleContent}
             ></textarea>
-            <input type="button" value="제출" onClick={submit_post} className={styles.submitBtn}/>
+            <input
+              type="button"
+              value="제출"
+              onClick={submitPost}
+              className={styles.submitBtn}
+            />
           </div>
         </div>
       </div>

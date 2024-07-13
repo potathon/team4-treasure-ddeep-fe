@@ -1,23 +1,51 @@
-.container {
-    width: 45%;
+/*.container {*/
+/*    !*width: 100%;*!*/
+/*    height: 100%;*/
+/*    !*background-color: red;*!*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+.albumItem {
+    width: 50%;
     height: 100%;
-    /*background-color: red;*/
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    flex-direction: column;
+    /*background-color: red;*/
+    align-items: center;
+    /*margin-right: 20px;*/
 }
 
 .imageContainer {
     /*padding: 10px;*/
-    height: 80px;
-    width: 180px;
+    /*height: 60%;*/
+    width: 70%;
+    height: 90%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 17px;
+    /*margin-left: 17px;*/
+    background-color: #F3E9D9;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    /*padding: 10px 5px 30px 5px;*/
+    /*margin: 5px 5px 20px 5px;*/
+
+
 }
+
+/*.polaroid {*/
+/*    width: 100%;*/
+/*    height: 140%;*/
+/*    background-color: red;*/
+/*    margin: 30px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
 
 .image {
     height: 80px;
@@ -28,12 +56,14 @@
 }
 
 .title {
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .infoContainer {
-    padding-left: 10px;
+    /*padding-left: 10px;*/
+    width: 70%;
     color: black;
+    margin-top: 10px;
 }
 
 .infoItem {

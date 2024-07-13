@@ -50,11 +50,12 @@
 
 .contentContainer {
     /*background-color: black;*/
-    width: 80%;
+    width: 90%;
     height: 50%;
     padding: 15px;
     justify-content: space-between;
     display: flex;
     flex-direction: row;
+    /*background-color: red;*/
 }
 

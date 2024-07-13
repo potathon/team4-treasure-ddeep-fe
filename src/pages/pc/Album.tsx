@@ -50,7 +50,7 @@ const AlbumPC: React.FC = () => {
         </button>
         <div className={styles.album}>
           <div className={styles.contentContainer}>
-            {loading && <p>Loading...</p>}
+            {loading && <p></p>}
             {error && <p>{error.message}</p>}
             {currentItems.map((item: any) => (
               <AlbumItem key={item.id} item={item} />
