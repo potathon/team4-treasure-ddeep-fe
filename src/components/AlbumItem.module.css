@@ -1,0 +1,46 @@
+.container {
+    width: 45%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.imageContainer {
+    /*padding: 10px;*/
+    height: 80px;
+    width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 17px;
+}
+
+.image {
+    height: 80px;
+    width: 180px;
+    display: block;
+    /*margin: 0 auto;*/
+    background-color: blue;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.infoContainer {
+    padding-left: 10px;
+    color: black;
+}
+
+.infoItem {
+    margin-bottom: 5px;
+}
+
+.content {
+    /*margin-top: 10px;*/
+    margin-bottom: 70px;
+}
