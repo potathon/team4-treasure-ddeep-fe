@@ -9,7 +9,7 @@ const CreateAlbumPC: React.FC = () => {
   const [password, setPassword] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState('제주북동쪽');
   const [image, setImage] = useState<File | null>(null);
   const [preview, setPreview] = useState<string>('');
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const CreateAlbumPC: React.FC = () => {
   };
 
   const submit_post = () => {
-    if (image === null || nickname === '' || password === '' || title === '' || content === '') {
+    if (image === null || nickname === '' || password === '' || title === '' || content === '' || location === '') {
       alert('모든 내용을 입력해주세요');
       return;
     } else {
@@ -66,6 +66,7 @@ const CreateAlbumPC: React.FC = () => {
       }).then(res => {
         if (res.ok) {
           alert('등록 완료');
+          navigate('/home');
         }else{
           return res.json().then((data) => {
             throw new Error(data.message || 'Something went wrong');
@@ -89,7 +90,7 @@ const CreateAlbumPC: React.FC = () => {
           <div className={styles.innerContainer}>
             <div className={styles.imageContainer}>
               {preview && <img src={preview} alt="upload preview" />}
-              <input type='file' accept='image/*' onChange={handleImage} />
+              {!image &&<input type='file' accept='image/*' onChange={handleImage} />}
             </div>
             <div className={styles.inputRow}>
               <input
@@ -126,7 +127,7 @@ const CreateAlbumPC: React.FC = () => {
               className={styles.textArea}
               onChange={handleContent}
             ></textarea>
-            <input type="button" value="제출" onClick={submit_post} />
+            <input type="button" value="제출" onClick={submit_post} className={styles.submitBtn}/>
           </div>
         </div>
       </div>
