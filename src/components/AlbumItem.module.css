@@ -9,7 +9,7 @@
 
 .albumItem {
     width: 50%;
-    height: 98%;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -17,13 +17,19 @@
     align-items: center;
     /*margin-right: 20px;*/
     margin-top: 8px;
+    /*position: absolute;*/
+    /*top: 10%;*/
 }
 
 .imageContainer {
+    /*position: absolute;*/
+    /*top: 10%;*/
+    height: auto;
     /*padding: 10px;*/
     /*height: 60%;*/
-    width: 75%;
-    height: 95%;
+    width: 200px;
+
+    /*height: %;*/
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -73,6 +79,7 @@
     color: black;
     margin-top: 10px;
     font-size: 14px;
+    height: 100%;
 
 }
 
