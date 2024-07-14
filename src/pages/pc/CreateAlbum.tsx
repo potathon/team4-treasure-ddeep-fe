@@ -7,7 +7,6 @@ import { SERVER_URL } from '../../utils/static';
 
 const CreateAlbumPC: React.FC = () => {
   const [nickname, setNickname] = useState('');
-  const [password, setPassword] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [location, setLocation] = useState('제주북동쪽');
@@ -18,14 +17,16 @@ const CreateAlbumPC: React.FC = () => {
   const handleNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(e.target.value);
   };
-  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
+
   const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value);
+    if (e.target.value.length <= 10) {
+      setTitle(e.target.value);
+    }
   };
   const handleContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setContent(e.target.value);
+    if (e.target.value.length <= 42) {
+      setContent(e.target.value);
+    }
   };
   const handleLocation = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLocation(e.target.value);
@@ -62,7 +63,6 @@ const CreateAlbumPC: React.FC = () => {
 
     const formData = new FormData();
     formData.append('nickname', nickname);
-    formData.append('password', password);
     formData.append('title', title);
     formData.append('location', location);
     formData.append('content', content);
@@ -117,18 +117,11 @@ const CreateAlbumPC: React.FC = () => {
                 className={styles.input}
                 onChange={handleNickname}
               />
-              {/*<input*/}
-              {/*  type="password"*/}
-              {/*  value={password}*/}
-              {/*  placeholder="비밀번호"*/}
-              {/*  className={styles.input}*/}
-              {/*  onChange={handlePassword}*/}
-              {/*/>*/}
             </div>
             <input
               type="text"
               value={title}
-              placeholder="제목"
+              placeholder="제목 (10글자 이하)"
               className={styles.titleInput}
               onChange={handleTitle}
             />
@@ -145,7 +138,7 @@ const CreateAlbumPC: React.FC = () => {
             </select>
             <textarea
               value={content}
-              placeholder="내용을 입력하세요"
+              placeholder="내용을 입력하세요 (42글자 이하)"
               className={styles.textArea}
               onChange={handleContent}
             ></textarea>
