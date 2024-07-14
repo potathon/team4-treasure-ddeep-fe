@@ -7,6 +7,7 @@ import { SERVER_URL } from '../../utils/static';
 
 const CreateAlbumPC: React.FC = () => {
   const [nickname, setNickname] = useState('');
+  const [password, setPassword] = useState(''); // New state for password
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [location, setLocation] = useState('제주북동쪽');
@@ -15,7 +16,15 @@ const CreateAlbumPC: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNickname = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNickname(e.target.value);
+    if (e.target.value.length <= 6) {
+      setNickname(e.target.value);
+    }
+  };
+
+  const handlePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value.length <= 4) {
+      setPassword(e.target.value);
+    }
   };
 
   const handleTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,14 +32,17 @@ const CreateAlbumPC: React.FC = () => {
       setTitle(e.target.value);
     }
   };
+
   const handleContent = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value.length <= 42) {
       setContent(e.target.value);
     }
   };
+
   const handleLocation = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLocation(e.target.value);
   };
+
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files ? e.target.files[0] : null;
     if (file) {
@@ -53,6 +65,7 @@ const CreateAlbumPC: React.FC = () => {
     if (
       image === null ||
       nickname === '' ||
+      password === '' || // Check if password is not empty
       title === '' ||
       content === '' ||
       location === ''
@@ -63,6 +76,7 @@ const CreateAlbumPC: React.FC = () => {
 
     const formData = new FormData();
     formData.append('nickname', nickname);
+    formData.append('password', password); // Append password to formData
     formData.append('title', title);
     formData.append('location', location);
     formData.append('content', content);
@@ -113,9 +127,16 @@ const CreateAlbumPC: React.FC = () => {
               <input
                 type="text"
                 value={nickname}
-                placeholder="작성자"
+                placeholder="작성자 (6글자 이하)"
                 className={styles.input}
                 onChange={handleNickname}
+              />
+              <input
+                type="password"
+                value={password}
+                placeholder="비밀번호 (4자리)"
+                className={styles.input}
+                onChange={handlePassword}
               />
             </div>
             <input
