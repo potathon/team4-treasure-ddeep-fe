@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import styles from './Album.module.css';
 import Layout from '../../components/layout/Layout';
@@ -21,20 +21,6 @@ const AlbumPC: React.FC = () => {
       ? `${SERVER_URL}/posts?location=${encodeURIComponent(albumLocation)}&page=${currentPage}`
       : '',
   );
-
-  const totalPages = data ? Math.ceil(data.data.length / itemsPerPage) : 1;
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) {
-      navigate(`/album?location=${albumLocation}&page=${currentPage + 1}`);
-    }
-  };
-
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      navigate(`/album?location=${albumLocation}&page=${currentPage - 1}`);
-    }
-  };
 
   const currentItems = data
     ? data.data.slice(
