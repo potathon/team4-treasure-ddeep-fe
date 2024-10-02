@@ -23,7 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 
-/utils
-static.ts
 
 .env
